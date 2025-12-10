@@ -1,0 +1,26 @@
+# Build folders
+bin/
+obj/
+
+# User settings
+*.user
+*.suo
+*.userprefs
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Dotnet artifacts
+*.dll
+*.exe
+*.pdb
+
+# EF Core Migrations (valgfrit)
+# Migrations/
+
+# Secret files
+appsettings.Development.json
+*.secret.json
