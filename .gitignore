@@ -22,5 +22,5 @@ obj/
 # Migrations/
 
 # Secret files
-appsettings.Development.json
+appsettings.json
 *.secret.json 
