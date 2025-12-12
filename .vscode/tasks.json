@@ -1,0 +1,80 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run UserProfileService",
+      "type": "shell",
+      "command": "dotnet run",
+      "options": {
+        "cwd": "Services/UserProfileService"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run PspService",
+      "type": "shell",
+      "command": "dotnet run",
+      "options": {
+        "cwd": "Services/PspService"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run HammaqService",
+      "type": "shell",
+      "command": "dotnet run",
+      "options": {
+        "cwd": "Services/HammaqService"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run VaskService",
+      "type": "shell",
+      "command": "dotnet run",
+      "options": {
+        "cwd": "Services/VaskService"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run TankService",
+      "type": "shell",
+      "command": "dotnet run",
+      "options": {
+        "cwd": "Services/TankService"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run AppService",
+      "type": "shell",
+      "command": "dotnet run",
+      "options": {
+        "cwd": "Services/AppService"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run NewBFF",
+      "type": "shell",
+      "command": "dotnet run",
+      "options": {
+        "cwd": "BFF/NewBFF"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run All Services",
+      "dependsOn": [
+        "Run UserProfileService",
+        "Run PspService",
+        "Run HammaqService",
+        "Run VaskService",
+        "Run TankService",
+        "Run AppService",
+        "Run NewBFF" 
+      ]
+    }
+  ]
+}
