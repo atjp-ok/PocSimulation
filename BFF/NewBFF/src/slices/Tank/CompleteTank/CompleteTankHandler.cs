@@ -15,6 +15,12 @@ public class CompleteTankHandler
         _tankServiceUrl = configuration["ServiceUrls:TankService"] ?? string.Empty;
         _configuration = configuration;
     }
+
+    /// <summary>
+    /// Completes a tanking session and returns the result.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     public async Task<TankCompleteResponse> HandleTankCompleteAsync(TankCompleteRequest request)
     {
         _logger.LogInformation("Calling TankService to complete tank.");

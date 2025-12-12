@@ -28,9 +28,17 @@ public class StartVaskHandler
         _hammaqServiceUrl = configuration["ServiceUrls:HammaqService"] ?? string.Empty;
     }
 
+    /// <summary>
+    /// Starts a vask session and reserves payment and calls hammaq to start vask.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     public async Task<VaskStatusResponse> HandleStartVask(VaskRequest request)
     {
         _logger.LogInformation($"Starting Vask for user ID: {request.UserId} at station ID: {request.StationId}");
+
+        // Fetch user profile
         var profileResponse = await _httpClient.GetFromJsonAsync<UserProfileModel>
         ($"{_userProfileServiceUrl}/api/UserProfile/{request.UserId}");
         if (profileResponse == null)
@@ -38,6 +46,8 @@ public class StartVaskHandler
             _logger.LogWarning($"User profile not found for user ID: {request.UserId}");
             throw new Exception("User profile not found");
         }
+
+        // Reserve payment
         var amount = request.Vasktype == "Premium" ? 250 : 150; // Example pricing logic
         var payment = new Request
         {
@@ -46,6 +56,8 @@ public class StartVaskHandler
             ServiceId = _VaskId,
             ServiceType = "Vask"
         };
+
+        // Call PSP to reserve payment
         var paymentResponse = await _httpClient.PostAsJsonAsync(
             $"{_pspServiceUrl}/api/Reserve/Reserve", payment);
 
@@ -54,6 +66,8 @@ public class StartVaskHandler
             _logger.LogWarning($"Payment reservation failed for user ID: {request.UserId}, Vask ID: {_VaskId}");
             throw new Exception("Payment reservation failed");
         }
+
+        // Create vask session
         var vask = new VaskStatusResponse
         {
             VaskId = _VaskId++,
@@ -67,6 +81,7 @@ public class StartVaskHandler
         _dbContext.VaskStatusResponses.Add(vask);
         await _dbContext.SaveChangesAsync();
 
+        // Call Hammaq to start vask
         var hammaqRequest = new HammaqRequest
         {
             ServiceId = vask.VaskId,

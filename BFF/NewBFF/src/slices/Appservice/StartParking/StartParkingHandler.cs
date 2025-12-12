@@ -16,6 +16,9 @@ public class StartParkingHandler
         _configuration = configuration;
     }
 
+    /// <summary>
+    /// Starts a parking session and returns the result.
+    /// </summary>
     public async Task<ParkingResponse> StartParkingAsync(ParkingRequest request)
     {
         _logger.LogInformation("Calling AppService to start parking.");

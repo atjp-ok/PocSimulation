@@ -17,6 +17,11 @@ public class ExpenseHandler
         _vaskServiceUrl = configuration["ServiceUrls:VaskService"] ?? string.Empty;
     }
 
+    /// <summary>
+    /// Gets expenses for a given user ID and calls TankService and VaskService to aggregate expenses.
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <returns></returns>
     public async Task<ExpensesDto> HandleGetExpensesAsync(int userId)
     {
         _logger.LogInformation("Fetching expenses from TankService, VaskService, and AppserviceService.");

@@ -3,6 +3,10 @@ using Microsoft.EntityFrameworkCore;
 namespace Shared.SharedModels.SharedDbContext;
 public class SharedDbContext : DbContext
 {
+    /// <summary>
+    /// Constructor for SharedDbContext to store shared models.
+    /// </summary>
+    /// <param name="options"></param>
     public SharedDbContext(DbContextOptions<SharedDbContext> options) : base(options)
     {
     }

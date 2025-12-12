@@ -15,7 +15,7 @@ public class HammaqResponse
 {
     [Key]
     public int Id { get; set; }
-    public int ServiceId { get; set; } //id for the specific tank or vask session
-    public string Status { get; set; } = "Pending"; //Pending, InProgress, Completed
-    public string ServiceType { get; set; } = string.Empty; //tank or vask
+    public int ServiceId { get; set; } 
+    public string Status { get; set; } = string.Empty; // InProgress or Completed
+    public string ServiceType { get; set; } = string.Empty;
 }

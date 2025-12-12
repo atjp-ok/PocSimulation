@@ -13,6 +13,11 @@ public class UserProfileHandler
         _dbContext = dbContext;
     }
 
+    /// <summary>
+    /// Gets the user profile by user ID.
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <returns></returns>
     public async Task<UserProfileModel?> HandleUserProfile(int userId)
     {
         var profile = _dbContext.UserProfiles.FirstOrDefault(p => p.UserId == userId);

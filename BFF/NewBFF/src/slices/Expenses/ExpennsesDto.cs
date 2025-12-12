@@ -1,6 +1,10 @@
 using System.Collections;
 
 namespace NewBFF.Slices.Expenses;
+
+/// <summary>
+/// Data Transfer Object for Expenses
+/// </summary>
 public class ExpensesDto
 {
     public int UserId { get; set; }

@@ -16,6 +16,11 @@ public class StartVaskController : ControllerBase
         _startVaskHandler = startVaskHandler;
     }
 
+    /// <summary>
+    /// Starts a vask session
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     [HttpPost("StartVask")]
     public async Task<IActionResult> StartVask([FromBody] VaskRequest request)
     {

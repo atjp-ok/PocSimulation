@@ -23,6 +23,13 @@ public class AppService : IAppService
         _dbContext = dbContext;
     }
 
+    /// <summary>
+    /// Starts a parking session and reserves payment
+    /// and returns parking details.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     public async Task<ParkingResponse> StartParkingAsync(ParkingRequest request)
     {
         var parkingId = _parkingId++;
@@ -64,6 +71,13 @@ public class AppService : IAppService
         return await Task.FromResult(responseDto);
     }
 
+    /// <summary>
+    /// Stops a parking session, captures payment,
+    /// and returns parking details.
+    /// </summary>
+    /// <param name="parkingId"></param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     public async Task<StopParkingResponse?> StopParkingAsync(int parkingId)
     {
         var parking = _dbContext.ParkingStatusResponses.FirstOrDefault(p => p.ParkingId == parkingId);
@@ -112,6 +126,13 @@ public class AppService : IAppService
         };
     }
 
+
+    /// <summary>
+    /// Gets the status of a parking session.
+    /// and returns parking details.
+    /// </summary>
+    /// <param name="parkingId"></param>
+    /// <returns></returns>
     public async Task<ParkingResponse?> GetParkingStatusAsync(int parkingId)
     {
         var status = _dbContext.ParkingStatusResponses.FirstOrDefault(p => p.ParkingId == parkingId);

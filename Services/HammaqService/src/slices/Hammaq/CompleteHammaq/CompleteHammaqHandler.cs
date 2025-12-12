@@ -22,6 +22,11 @@ public class CompleteHammaqHandler
         _dbContext = dbContext;
     }
 
+    /// <summary>
+    /// Completes the Hammaq service for a request and notifies Vask and Tank services.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     public async Task<HammaqResponse> HandleComplete(HammaqRequest request)
     {
         var status = _dbContext.HammaqResponses.FirstOrDefault(s => s.ServiceId == request.ServiceId && s.ServiceType == request.ServiceType);

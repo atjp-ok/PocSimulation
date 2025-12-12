@@ -16,6 +16,11 @@ public class GetCompletedTransactionController : ControllerBase
         _handler = handler;
     }
 
+    /// <summary>
+    /// Gets completed vask transactions for a user.
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <returns></returns>
     [HttpGet]
     [Route("GetCompletedTransaction/{userId}")]
     public async Task<ActionResult<List<VaskCompleteResponse>>> GetCompletedTransaction(int userId)

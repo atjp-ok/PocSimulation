@@ -16,6 +16,11 @@ public class GetTankStatusHandler
         _configuration = configuration;
     }
 
+    /// <summary>
+    /// Gets the status of a tanking session for a given tank ID and returns the result.
+    /// </summary>
+    /// <param name="tankId"></param>
+    /// <returns></returns>
     public async Task<TankStatusResponse> HandleGetTankStatusAsync(int tankId)
     {
         _logger.LogInformation("Calling TankService to get tank status.");

@@ -12,6 +12,11 @@ public class ReserveHandler
         _dbContext = dbContext;
     }
 
+    /// <summary>
+    /// Reserves a payment for a service and stores the reservation.
+    /// </summary>
+    /// <param name="payment"></param>
+    /// <returns></returns>
     public async Task<Response> HandleReserve(Request payment)
     {
         _logger.LogInformation($"Reserving Payment | User: {payment.UserId}, Service:{payment.ServiceType} ({payment.ServiceId}), Amount: {payment.Amount}");

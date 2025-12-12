@@ -1,6 +1,7 @@
 using Shared.SharedModels.VaskModels;
 
 namespace BFF.NewBFF.Slices.Vask.CompleteVask;
+
 public class CompleteVaskHandler
 {
     private readonly ILogger<CompleteVaskHandler> _logger;
@@ -16,6 +17,11 @@ public class CompleteVaskHandler
         _configuration = configuration;
     }
 
+    /// <summary>
+    /// Completes a vask session and returns the result.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     public async Task<VaskCompleteResponse> HandleCompleteVaskAsync(VaskCompleteRequest request)
     {
         _logger.LogInformation("Calling VaskService to complete vask.");

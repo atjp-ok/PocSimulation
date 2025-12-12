@@ -23,6 +23,13 @@ public class CompleteTankHandler
         _pspServiceUrl = configuration["ServiceUrls:PspService"] ?? string.Empty;
     }
 
+    /// <summary>
+    /// Completes the tanking process, updates status, calculates amount, and captures payment.
+    /// Called by hammaq when tanking is done.
+    /// </summary>
+    /// <param name="tankComplete"></param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     public async Task<TankCompleteResponse> HandleTankComplete(TankCompleteRequest tankComplete)
     {
         var tank = _dbContext.TankResponses.FirstOrDefault(t => t.TankId == tankComplete.TankId);

@@ -20,6 +20,12 @@ public class GetStatusVaskHandler
         _hammaqServiceUrl = configuration["ServiceUrls:HammaqService"] ?? string.Empty;
     }
 
+
+    /// <summary>
+    /// Gets the status of a vask session and returns vask details.
+    /// </summary>
+    /// <param name="VaskId"></param>
+    /// <returns></returns>
     public async Task<VaskStatusResponse> HandleVaskStatus(int VaskId)
     {
         _logger.LogInformation($"Fetching Vask status for Vask ID: {VaskId}");

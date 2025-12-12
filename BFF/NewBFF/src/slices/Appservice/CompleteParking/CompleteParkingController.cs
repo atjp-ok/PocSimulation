@@ -16,6 +16,11 @@ public class CompleteParkingController : ControllerBase
         _completeParkingHandler = completeParkingHandler;
     }
 
+    /// <summary>
+    /// Stops the parking session for a given parking ID.
+    /// </summary>
+    /// <param name="parkingId"></param>
+    /// <returns></returns>
     [HttpPost("StopParking/{parkingId}")]
     public async Task<IActionResult> StopParking(int parkingId)
     {

@@ -16,6 +16,11 @@ public class GetStatusVaskController : ControllerBase
 
     }
 
+    /// <summary>
+    /// Gets the status of a vask session and returns vask details.
+    /// </summary>
+    /// <param name="vaskId"></param>
+    /// <returns></returns>
     [HttpGet("GetStatusVask")]
     public async Task<IActionResult> GetVaskStatus(int vaskId)
     {

@@ -14,6 +14,11 @@ public class ExpenseController : ControllerBase
         _logger = logger;
     }
 
+    /// <summary>
+    /// Gets expenses for a given user ID
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <returns></returns>
     [HttpGet("GetExpenses/{userId}")]
     public async Task<IActionResult> GetExpenses(int userId)
     {

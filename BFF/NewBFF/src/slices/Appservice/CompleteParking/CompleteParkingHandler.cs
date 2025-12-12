@@ -16,6 +16,11 @@ public class CompleteParkingHandler
         _configuration = configuration;
     }
 
+    /// <summary>
+    /// Stops the parking session for a given parking ID and returns the result.
+    /// </summary>
+    /// <param name="parkingId"></param>
+    /// <returns></returns>
     public async Task<StopParkingResponse> HandleCompleteParkingAsync(int parkingId)
     {
         _logger.LogInformation("Calling AppService to stop parking.");

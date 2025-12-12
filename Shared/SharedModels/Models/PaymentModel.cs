@@ -16,9 +16,9 @@ public class Response
 {
     [Key]
     public int Id { get; set; }
-    public int UserId { get; set; }    // <-- Tilføj denne linje!
-    public double Amount { get; set; } // <-- Og denne!
-    public int ServiceId { get; set; } //id for the specific tank or vask session
+    public int UserId { get; set; }   
+    public double Amount { get; set; }
+    public int ServiceId { get; set; } 
     public string Status { get; set; } = string.Empty; //Reserved, Captured, Failed
-    public string ServiceType { get; set; } = string.Empty; //tank or vask
+    public string ServiceType { get; set; } = string.Empty; 
 }

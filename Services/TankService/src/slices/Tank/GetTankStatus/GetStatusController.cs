@@ -15,6 +15,9 @@ public class GetTankStatusController : ControllerBase
         _statusHandler = statusHandler;
     }
 
+    /// <summary>
+    /// Gets the current status of a tanking session.
+    /// </summary>
     [HttpGet("GetTankStatus/{tankId}")]
     public async Task<IActionResult> GetTankStatus(int tankId) 
     {

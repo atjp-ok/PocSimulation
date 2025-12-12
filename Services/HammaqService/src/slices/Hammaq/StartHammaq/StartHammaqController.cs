@@ -17,6 +17,11 @@ public class StartHammaqController : ControllerBase
         _hammaqHandler = hammaqHandler;
     }
 
+    /// <summary>
+    /// Starts the Hammaq service for a request.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     [HttpPost("Start")]
     public async Task<IActionResult> Start([FromBody] HammaqRequest request)
     {

@@ -14,6 +14,11 @@ public class UserProfileController : ControllerBase
         _userProfileHandler = userProfileHandler;
     }
 
+    /// <summary>
+    /// Gets the user profile by user ID.
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <returns></returns>
     [HttpGet("{userId}")]
     public async Task<IActionResult> GetUserProfile(int userId)
     {

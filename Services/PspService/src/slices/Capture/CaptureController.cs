@@ -15,6 +15,11 @@ public class CaptureController : ControllerBase
         _captureHandler = captureHandler;
     }
 
+    /// <summary>
+    /// Captures a payment for a service.
+    /// </summary>
+    /// <param name="payment"></param>
+    /// <returns></returns>
     [HttpPost("Capture")]
     public async Task<IActionResult> Capture([FromBody] Request payment)
     {

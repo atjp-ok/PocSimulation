@@ -11,6 +11,12 @@ public class CaptureHandler
         _logger = logger;
         _dbContext = dbContext;
     }
+
+    /// <summary>
+    /// Captures a payment for a service and updates the status.
+    /// </summary>
+    /// <param name="payment"></param>
+    /// <returns></returns>
     public async Task<Response> HandleCapture(Request payment)
     {
         _logger.LogInformation($"Capturing Payment | User: {payment.UserId}, Service:{payment.ServiceType} ({payment.ServiceId}), Amount: {payment.Amount}");
