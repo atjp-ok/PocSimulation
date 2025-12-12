@@ -17,6 +17,11 @@ public class CompleteTankController : ControllerBase
         _completeTankHandler = completeTankHandler;
     }
 
+    /// <summary>
+    /// Completes a tanking session
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     [HttpPost("CompleteTank")]
     public async Task<IActionResult> TankComplete([FromBody] TankCompleteRequest request)
     {

@@ -22,11 +22,11 @@ public class VaskRequest
 public class VaskStatusResponse
 {
     [Key]
-    public int VaskId { get; set; } //id for the specific vask session
-    public int UserId { get; set; } // User who requested the vask
-    public int StationId { get; set; } // which station from hammaq
-    public string CurrentStatus { get; set; } = "InProgress"; //pending,inprogress,completed
-    public string Vasktype { get; set; } = "Basis"; //type of vask, Basis or Premium
+    public int VaskId { get; set; } 
+    public int UserId { get; set; } 
+    public int StationId { get; set; } 
+    public string CurrentStatus { get; set; } = "InProgress"; 
+    public string Vasktype { get; set; } = "Basis"; 
     public double AmountToPay { get; set; }
     public string Message { get; set; } = string.Empty;
 
@@ -36,22 +36,22 @@ public class VaskCompleteRequest
 {
     [DefaultValue(1)]
     [Key]
-    public int VaskId { get; set; } //id for the specific vask session
+    public int VaskId { get; set; } 
 
     [DefaultValue(1)]
-    public int StationId { get; set; } // which station from hammaq
+    public int StationId { get; set; } 
 
     [DefaultValue(1)]
-    public int UserId { get; set; } // User who requested the vask
+    public int UserId { get; set; } 
 }
 
 public class VaskCompleteResponse
 {
     [Key]
-    public int VaskId { get; set; } //id for the specific vask session
-    public int UserId { get; set; } // User who requested the vask
-    public int StationId { get; set; } // which station from hammaq
-    public string CurrentStatus { get; set; } = string.Empty; //pending,inprogress,completed
+    public int VaskId { get; set; } 
+    public int UserId { get; set; } 
+    public int StationId { get; set; } 
+    public string CurrentStatus { get; set; } = string.Empty; 
     public string Vasktype { get; set; } = string.Empty; //type of vask, Basis or Premium
     public double AmountToPay { get; set; }
     public string Message { get; set; } = string.Empty;

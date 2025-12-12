@@ -27,6 +27,9 @@ public class StartTankHandler
         _hammaqServiceUrl = configuration["ServiceUrls:HammaqService"] ?? string.Empty;
     }
 
+    /// <summary>
+    /// Starts a tanking session, reserves payment, and calls hammaq to start tanking
+    /// </summary>
     public async Task<TankStatusResponse> HandleStartTank(StartTankRequest request)
     {
         _logger.LogInformation($"Starting Tank for user ID: {request.UserId} at station ID: {request.StationId}, FuelType: {request.Fueltype}");

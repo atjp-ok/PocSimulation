@@ -17,6 +17,11 @@ public class CompleteHammaqController : ControllerBase
         _hammaqHandler = hammaqHandler;
     }
 
+    /// <summary>
+    /// Completes the Hammaq service for a request.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     [HttpPost("Complete")]
     public async Task<IActionResult> Complete([FromBody] HammaqRequest request)
     {

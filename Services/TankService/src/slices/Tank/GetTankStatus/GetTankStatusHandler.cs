@@ -21,6 +21,9 @@ namespace TankService.slices.Tank.GetTankStatus
             _hammaqServiceUrl = configuration["ServiceUrls:HammaqService"] ?? string.Empty;
         }
 
+        /// <summary>
+        /// Gets the current status of a tanking session.
+        /// </summary>
         public async Task<TankStatusResponse> HandleTankStatus(int tankId)
         {
             _logger.LogInformation($"Retrieving status for TankId: {tankId}.");

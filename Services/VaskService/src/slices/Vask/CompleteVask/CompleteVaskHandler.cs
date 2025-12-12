@@ -22,6 +22,14 @@ public class CompleteVaskHandler
         _userProfileServiceUrl = configuration["ServiceUrls:UserProfileService"] ?? string.Empty;
         _pspServiceUrl = configuration["ServiceUrls:PspService"] ?? string.Empty;
     }
+
+    /// <summary>
+    /// Completes a vask session and handles payment capture.
+    /// Called by hammaq when vask is done.
+    /// </summary>
+    /// <param name="vaskComplete"></param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     public async Task<VaskCompleteResponse> HandleCompleteVask(VaskCompleteRequest vaskComplete)
     {
         var vask = _dbContext.VaskStatusResponses.FirstOrDefault(t => t.VaskId == vaskComplete.VaskId);

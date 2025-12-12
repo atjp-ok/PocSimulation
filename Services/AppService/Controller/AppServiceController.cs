@@ -16,6 +16,11 @@ public class AppServiceController : ControllerBase
         _logger = logger;
     }
 
+    /// <summary>
+    /// Starts a parking session.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     [HttpPost("StartParking")]
     public async Task<ActionResult> StartParking([FromBody] ParkingRequest request)
     {
@@ -24,6 +29,11 @@ public class AppServiceController : ControllerBase
         return Ok(result);
     }
 
+    /// <summary>
+    /// Stops a parking session.
+    /// </summary>
+    /// <param name="parkingId"></param>
+    /// <returns></returns>
     [HttpPost("StopParking/{parkingId}")]
     public async Task<ActionResult> StopParking(int parkingId)
     {
@@ -36,6 +46,11 @@ public class AppServiceController : ControllerBase
         return Ok(result);
     }
 
+    /// <summary>
+    /// Gets the status of a parking session.
+    /// </summary>
+    /// <param name="parkingId"></param>
+    /// <returns></returns>
     [HttpGet("GetParkingStatus/{parkingId}")]
     public async Task<IActionResult> GetParkingStatus(int parkingId)
     {

@@ -16,6 +16,11 @@ public class GetParkingStatusHandler
         _configuration = configuration;
     }
 
+    /// <summary>
+    /// Gets the status of a parking session for a given parking ID and returns the result.
+    /// </summary>
+    /// <param name="parkingId"></param>
+    /// <returns></returns>
     public async Task<ParkingResponse> HandleParkingStatusAsync(int parkingId)
     {
         _logger.LogInformation("Calling AppService to get parking status.");

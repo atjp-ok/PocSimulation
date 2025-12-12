@@ -22,6 +22,11 @@ public class StartHammaqHandler
         _serviceFactory = serviceFactory;
     }
 
+    /// <summary>
+    /// Starts the Hammaq service for a request and simulates completion after a delay.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     public async Task<HammaqResponse> HandleStart(HammaqRequest request)
     {
         var status = new HammaqResponse
@@ -33,13 +38,13 @@ public class StartHammaqHandler
         _dbContext.HammaqResponses.Add(status);
         await _dbContext.SaveChangesAsync();
         _logger.LogInformation($"Hammaq service started for {request.ServiceType} with ID {request.ServiceId} on station {request.StationId}.");
-        
+
         // Background task to simulate completion after delay
         _ = Task.Run(async () =>
   {
       try
       {
-          await Task.Delay(TimeSpan.FromSeconds(20)); // simulerer proces
+          await Task.Delay(TimeSpan.FromSeconds(20)); // Simulated operation time
 
           using var scope = _serviceFactory.CreateScope();
           var db = scope.ServiceProvider.GetRequiredService<SharedDbContext>();

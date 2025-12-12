@@ -20,6 +20,11 @@ public class GetCompletedTransactionHandler
         _dbContext = dbContext;
     }
 
+    /// <summary>
+    /// Gets completed vask transactions for a user.
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <returns></returns>
     public async Task<List<VaskCompleteResponse>> GetCompletedTransactionAsync(int userId)
     {
         var completed = await _dbContext.VaskCompleteResponses
@@ -28,6 +33,10 @@ public class GetCompletedTransactionHandler
         return completed!;
     }
 
+    /// <summary>
+    /// Adds a completed vask transaction to the database.
+    /// </summary>
+    /// <param name="completedTransaction"></param>
     public void AddTransactionToDb(VaskCompleteResponse completedTransaction)
     {
         _dbContext.VaskCompleteResponses.Add(completedTransaction);

@@ -17,6 +17,12 @@ public class GetStatusController : ControllerBase
         _hammaqHandler = hammaqHandler;
     }
 
+    /// <summary>
+    /// Gets the status of a Hammaq service request called by Vask and Tank services.
+    /// </summary>
+    /// <param name="ServiceType"></param>
+    /// <param name="ServiceId"></param>
+    /// <returns></returns>
     [HttpGet("GetStatus")]
     public async Task<IActionResult> GetStatus([FromQuery] string ServiceType, [FromQuery] int ServiceId)
     {

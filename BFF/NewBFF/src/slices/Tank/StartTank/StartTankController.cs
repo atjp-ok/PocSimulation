@@ -16,6 +16,11 @@ public class StartTankController : ControllerBase
         _startTankHandler = startTankHandler;
     }
 
+    /// <summary>
+    /// Starts a tanking session
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     [HttpPost("StartTank")]
     public async Task<IActionResult> StartTank([FromBody] StartTankRequest request)
     {

@@ -1,6 +1,7 @@
 using Shared.SharedModels.VaskModels;
 
 namespace BFF.NewBFF.Slices.Vask.StartVask;
+
 public class StartVaskHandler
 {
     private readonly ILogger<StartVaskHandler> _logger;
@@ -16,6 +17,11 @@ public class StartVaskHandler
         _configuration = configuration;
     }
 
+    /// <summary>
+    /// Starts a vask session and returns the result.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     public async Task<VaskStatusResponse> HandleStartVaskAsync(VaskRequest request)
     {
         _logger.LogInformation("Calling VaskService to start vask.");

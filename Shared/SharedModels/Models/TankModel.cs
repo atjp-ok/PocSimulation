@@ -22,15 +22,12 @@ public class StartTankRequest
 public class TankStatusResponse
 {
     [Key]
-    public int TankId { get; set; } //id for the specific tank session
+    public int TankId { get; set; } 
 
     public string CurrentStatus { get; set; } = string.Empty; //pending,inprogress,completed
-    public string Fueltype { get; set; } = string.Empty; //diesel, 95
-
-    // [JsonPropertyName("amountLiters")]
-    // public double ActualLiters { get; set; } // amount to fill, to use for payment reservation
-    public int StationId { get; set; } // which station from hammaq
-    public int UserId { get; set; } //User requesting the tank if they have an account
+    public string Fueltype { get; set; } = string.Empty; 
+    public int StationId { get; set; } 
+    public int UserId { get; set; } 
 }
 
 
@@ -38,29 +35,29 @@ public class TankCompleteRequest
 {
     [DefaultValue(1)]
     [Key]
-    public int TankId { get; set; } //id for the specific tank session
+    public int TankId { get; set; } 
 
     [DefaultValue(1)]
-    public int StationId { get; set; } // which station from hammaq
+    public int StationId { get; set; }
 
     [DefaultValue(10.0)]
-    public double ActualLiters { get; set; } // amount filled
+    public double ActualLiters { get; set; } 
 
     [DefaultValue(1)]
-    public int UserId { get; set; } // User who requested the tank
+    public int UserId { get; set; } 
 }
 
 
 public class TankCompleteResponse
 {
     [Key]
-    public int TankId { get; set; } //id for the specific tank session
+    public int TankId { get; set; } 
     public string CurrentStatus { get; set; } = "Completed"; //Pending, InProgress, Completed
-    public int UserId { get; set; } // User who requested the tank
-    public double AmountLiters { get; set; } // amount filled
+    public int UserId { get; set; } 
+    public double AmountLiters { get; set; } 
     public string Fueltype { get; set; } = string.Empty; //diesel, 95
     public double AmountCharged { get; set; }
-    public int StationId { get; set; } // which station from hammaq
+    public int StationId { get; set; } 
     public string Message { get; set; } = string.Empty;
      public string Category {get; set;} ="Tank";
 }

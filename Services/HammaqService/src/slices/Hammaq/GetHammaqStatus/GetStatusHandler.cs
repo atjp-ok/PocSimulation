@@ -16,6 +16,11 @@ public class GetStatusHandler
         _dbContext = dbContext;
     }
 
+    /// <summary>
+    /// Gets the status of a Hammaq service request.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     public Task<HammaqResponse> HandleStatus(HammaqRequest request)
     {
         var status = _dbContext.HammaqResponses.FirstOrDefault(s => s.ServiceId == request.ServiceId && s.ServiceType == request.ServiceType);

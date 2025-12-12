@@ -15,6 +15,9 @@ public class GetParkingStatusController : ControllerBase
         _getParkingStatusHandler = getParkingStatusHandler;
     }
 
+    /// <summary>
+    /// Gets the status of a parking session for a given parking ID.
+    /// </summary>
     [HttpGet("GetParkingStatus/{parkingId}")]
     public async Task<IActionResult> GetParkingStatus(int parkingId)
     {

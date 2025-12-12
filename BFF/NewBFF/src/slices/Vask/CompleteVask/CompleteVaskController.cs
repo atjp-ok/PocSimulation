@@ -17,7 +17,11 @@ public class CompleteVaskController : ControllerBase
         _completeVaskHandler = completeVaskHandler;
     }
 
-
+    /// <summary>
+    /// Completes a vask session
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     [HttpPost("CompleteVask")]
     public async Task<IActionResult> VaskComplete([FromBody] VaskCompleteRequest request)
     {

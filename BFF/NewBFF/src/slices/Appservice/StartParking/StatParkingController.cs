@@ -16,6 +16,11 @@ public class StartParkingController : ControllerBase
         _startParkingHandler = startParkingHandler;
     }
 
+    /// <summary>
+    /// Starts a parking session
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     [HttpPost("StartParking")]
     public async Task<IActionResult> StartParking([FromBody] ParkingRequest request)
     {

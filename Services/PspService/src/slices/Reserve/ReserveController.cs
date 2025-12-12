@@ -15,6 +15,11 @@ public class ReserveController : ControllerBase
         _reserveHandler = reserveHandler;
     }
 
+    /// <summary>
+    /// Reserves a payment for a service.
+    /// </summary>
+    /// <param name="payment"></param>
+    /// <returns></returns>
     [HttpPost("Reserve")]
     public async Task<IActionResult> Reserve([FromBody] Request payment)
     {
