@@ -1,7 +1,6 @@
 # Poc Tank/Vask/Appservice
 
-Projektoverersigt
-Projektet er en del af bacherloropgaven og illustrerer handtering af ofrretningslogik i et system med flere service
+Projektet er en del af bacherloropgaven og illustrerer et system med flere services
 herunder:
 ## Services
 
