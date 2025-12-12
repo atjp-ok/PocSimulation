@@ -15,7 +15,7 @@ herunder:
 ## Teknologier
 
 - .NET Core / ASP.NET Core
-- Entity Framework Core (InMemory DB)
+- Entity Framework Core (InMemory DB) 
 - REST API (JSON)
 - Visual Studio Code
 

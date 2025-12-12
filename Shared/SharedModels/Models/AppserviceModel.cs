@@ -12,7 +12,7 @@ public class ParkingRequest
     public int UserId { get; set; }
 
     [DefaultValue("Aarhus C")]
-    public string? Location { get; set; }
+    public string? Location { get; set; } 
 }
 public class ParkingResponse
 {
